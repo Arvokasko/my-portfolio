@@ -1,0 +1,209 @@
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In From Bottom */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Default state for animated elements */
+.scroll-animate {
+    opacity: 0;
+    animation-fill-mode: both;
+    will-change: opacity, transform;
+}
+
+/* Apply animations when element enters viewport */
+.scroll-animate.animate {
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
+}
+
+.scroll-animate.animate-fade {
+    animation-name: fadeIn;
+}
+
+.scroll-animate.animate-fade.animate {
+    animation-name: fadeIn;
+}
+
+.scroll-animate.animate-slide-left {
+    transform: translateX(-60px);
+}
+
+.scroll-animate.animate-slide-left.animate {
+    animation-name: slideInLeft;
+}
+
+.scroll-animate.animate-slide-right {
+    transform: translateX(60px);
+}
+
+.scroll-animate.animate-slide-right.animate {
+    animation-name: slideInRight;
+}
+
+.scroll-animate.animate-slide-up {
+    transform: translateY(40px);
+}
+
+.scroll-animate.animate-slide-up.animate {
+    animation-name: slideInUp;
+}
+
+.scroll-animate.animate-scale {
+    transform: scale(0.8);
+}
+
+.scroll-animate.animate-scale.animate {
+    animation-name: scaleIn;
+}
+
+/* Staggered animations for multiple elements */
+.scroll-animate-group>* {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+.scroll-animate-group.animate>* {
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: both;
+}
+
+.scroll-animate-group.animate> :nth-child(1) {
+    animation-name: slideInUp;
+    animation-delay: 0s;
+}
+
+.scroll-animate-group.animate> :nth-child(2) {
+    animation-name: slideInUp;
+    animation-delay: 0.15s;
+}
+
+.scroll-animate-group.animate> :nth-child(3) {
+    animation-name: slideInUp;
+    animation-delay: 0.3s;
+}
+
+.scroll-animate-group.animate> :nth-child(4) {
+    animation-name: slideInUp;
+    animation-delay: 0.45s;
+}
+
+.scroll-animate-group.animate> :nth-child(5) {
+    animation-name: slideInUp;
+    animation-delay: 0.6s;
+}
+
+.scroll-animate-group.animate> :nth-child(6) {
+    animation-name: slideInUp;
+    animation-delay: 0.75s;
+}
+
+.scroll-animate-group.animate> :nth-child(7) {
+    animation-name: slideInUp;
+    animation-delay: 0.9s;
+}
+
+.scroll-animate-group.animate> :nth-child(8) {
+    animation-name: slideInUp;
+    animation-delay: 1.05s;
+}
+
+.scroll-animate-group.animate> :nth-child(9) {
+    animation-name: slideInUp;
+    animation-delay: 1.2s;
+}
+
+.scroll-animate-group.animate> :nth-child(10) {
+    animation-name: slideInUp;
+    animation-delay: 1.35s;
+}
+
+/* Hover animations for link icons */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.link-icon {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.link-icon:hover {
+    animation: iconPulse 0.3s ease-in-out;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.5));
+}
+
+/* Apply hover animation to icons inside scroll-animate-group */
+.scroll-animate-group i:hover {
+    animation: iconPulse 0.3s ease-in-out;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.5));
+}

@@ -1,0 +1,52 @@
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    transform: rotate(180deg);
+    object-fit: cover;
+    /* ensures video covers the area */
+    opacity: 0;
+    transition: opacity 1s ease 0.2s;
+}
+
+.background-video.loaded {
+    opacity: 1;
+}
+
+.fadeDiv {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+    z-index: -1;
+}
+
+.homeHeader {
+    font-size: 150px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.5s;
+}
+
+.homeHeader.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1300px) {
+    .homeHeader {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .homeHeader {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+}

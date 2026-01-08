@@ -1,0 +1,33 @@
+* {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebarLink {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.sidebarLink:hover {
+    animation: iconPulse 0.3s ease-in-out;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.712));
+}
+
+/* Hover animations for link icons */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
